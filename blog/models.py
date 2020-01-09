@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 from django.utils import timezone
 from django.contrib.auth.models import User
+from taggit.managers import TaggableManager
 
 
 class Category(models.Model):
@@ -20,9 +21,11 @@ class Post(models.Model):
     title = models.TextField(max_length=50)
     content = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    # tags =
+    image = models.ImageField(upload_to='blog/', blank=True, null=True)
     category = models.ForeignKey(Category, null=True, on_delete=models.SET_NULL)
     created = models.DateTimeField(default=timezone.now)
+
+    tags = TaggableManager(blank=True)
 
     class Meta:
         verbose_name = 'article'
