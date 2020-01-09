@@ -9,7 +9,9 @@
               <div class="row align-items-center justify-content-center">
                 <div class="col-md-7" data-aos="fade-up">
                   <h2 class="heading">Reservation</h2>
-                  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo saepe dolorum dolorem, iste officia voluptates! Sint repudiandae, soluta voluptatem delectus iure, eaque, harum expedita, nisi aliquam magni odio perferendis ipsum!</p>
+                  <p class="lead">C'est dans le cadre idyllique des jardins de L'ancien Palais , à deux pas du ministère des
+                    sports, qu'on trouve cet élégant restaurant. On se délecte de ces douceurs
+                    dans un cadre contemporain au luxe discret, qui est un régal pour les yeux</p>
                 </div>
               </div>
             </div>
@@ -31,7 +33,7 @@
                 <form action="" method="POST">
                   {% csrf_token %}
                   {{ form }}
-                  <button type="submit" class="btn btn-primary">Réserver</button>
+                      <button type="submit" class="btn btn-primary">Réserver</button>
                 </form>
                 
 
@@ -58,7 +60,7 @@
                     <blockquote class="testimonial">
                       <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quaerat recusandae molestias incidunt sapiente sit numquam delectus mollitia! Non laudantium impedit voluptas consequatur corrupti. Cumque consequuntur nemo eos et error!&rdquo;</p>
                       <div class="author">
-                        <img src="img/person_1.jpg" alt="Image placeholder" class="mb-3">
+                        <img src="{% static 'site_static/img/person_1.jpg' %}" alt="Image placeholder" class="mb-3">
                         <h4>Maxim Smith</h4>
                         <p>CEO, Founder</p>
                       </div>
@@ -68,7 +70,7 @@
                     <blockquote class="testimonial">
                       <p>&ldquo;Sint adipisci laborum dolorum ipsa quidem alias ipsum aperiam aut! Quis rerum soluta dolorem iure nihil velit error sequi? Dignissimos accusantium adipisci unde officia? Dolores aut sequi dolorum repellendus quod.&rdquo;</p>
                       <div class="author">
-                        <img src="img/person_2.jpg" alt="Image placeholder" class="mb-3">
+                        <img src="{% static 'site_static/img/person_2.jpg' %}" alt="Image placeholder" class="mb-3">
                         <h4>Geert Green</h4>
                         <p>CEO, Founder</p>
                       </div>
@@ -78,7 +80,7 @@
                     <blockquote class="testimonial">
                       <p>&ldquo;Ratione alias iure ab facere quia aliquam dolor et voluptates esse nihil corporis distinctio hic ea quo ducimus autem cum amet. Quos accusamus iusto porro nulla temporibus numquam commodi soluta.&rdquo;</p>
                       <div class="author">
-                        <img src="img/person_3.jpg" alt="Image placeholder" class="mb-3">
+                        <img src="{% static 'site_static/img/person_3.jpg' %}" alt="Image placeholder" class="mb-3">
                         <h4>Dennis Roman</h4>
                         <p>CEO, Founder</p>
                       </div>
@@ -88,7 +90,7 @@
                     <blockquote class="testimonial">
                       <p>&ldquo;Ad quod aspernatur ipsa. Numquam expedita delectus qui ad explicabo voluptas eos vel reiciendis magnam rerum quaerat quisquam accusantium quae saepe ipsam ullam ut ea molestiae porro. Recusandae veniam maxime.&rdquo;</p>
                       <div class="author">
-                        <img src="img/person_2.jpg" alt="Image placeholder" class="mb-3">
+                        <img src="{% static 'site_static/img/person_2.jpg' %}" alt="Image placeholder" class="mb-3">
                         <h4>Geert Green</h4>
                         <p>CEO, Founder</p>
                       </div>
