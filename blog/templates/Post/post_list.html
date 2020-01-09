@@ -24,7 +24,7 @@
               <div class="col-md-4">
                 <div class="media d-block media-bg-white mb-5" data-aos="fade-up"  data-aos-delay="400">
                   <figure>
-                    <a href="post_detail.html"><img src="{{ post.image.url }}" alt="Image placeholder" class="img-fluid"></a>
+                    <a href="{% url 'blog:post_detail' post.id %}"><img src="{{ post.image.url }}" alt="Image placeholder" class="img-fluid"></a>
                   </figure>
                   <div class="media-body">
                     <h3><a href="{% url 'blog:post_detail' post.id %}">{{ post }}</a></h3>
