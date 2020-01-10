@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load bootstrap4 %}
 {% block body %}
 
       <div class="main-wrap">
@@ -24,7 +25,7 @@
 
        <div class="section">
           <div class="container">
-            
+
             <div class="row">
 
               <div class="col-md-8">
@@ -39,108 +40,34 @@
                 </div>
 
                 <div class="pt-5 mt-5">
-                  <h3 class="mb-5">6 Commentaires</h3>
+                  <h3 class="mb-5"> Commentaires</h3>
                   <ul class="comment-list">
+                      {% for comment in comments %}
                     <li class="comment">
                       <div class="vcard bio">
                         <img src="{% static 'site_static/img/person_1.jpg' %}" alt="Image placeholder">
                       </div>
                       <div class="comment-body">
-                        <h3>Jean Doe</h3>
-                        <div class="meta">January 9, 2018 at 2:21pm</div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+                        <h3>{{ comment.user }}</h3>
+                        <div class="meta">{{ comment.created }}</div>
+                        <p>{{ comment.content }}</p>
                       </div>
                     </li>
-
-                    <li class="comment">
-                      <div class="vcard bio">
-                        <img src="{% static 'site_static/img/person_1.jpg' %}" alt="Image placeholder">
-                      </div>
-                      <div class="comment-body">
-                        <h3>Jean Doe</h3>
-                        <div class="meta">January 9, 2018 at 2:21pm</div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                      </div>
-
-                      <ul class="children">
-                        <li class="comment">
-                          <div class="vcard bio">
-                            <img src="{% static 'site_static/img/person_1.jpg' %}" alt="Image placeholder">
-                          </div>
-                          <div class="comment-body">
-                            <h3>Jean Doe</h3>
-                            <div class="meta">January 9, 2018 at 2:21pm</div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                          </div>
-
-
-                          <ul class="children">
-                            <li class="comment">
-                              <div class="vcard bio">
-                                <img src="{% static 'site_static/img/person_1.jpg' %}" alt="Image placeholder">
-                              </div>
-                              <div class="comment-body">
-                                <h3>Jean Doe</h3>
-                                <div class="meta">January 9, 2018 at 2:21pm</div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                              </div>
-
-                                <ul class="children">
-                                  <li class="comment">
-                                    <div class="vcard bio">
-                                      <img src="{% static 'site_static/img/person_1.jpg' %}" alt="Image placeholder">
-                                    </div>
-                                    <div class="comment-body">
-                                      <h3>Jean Doe</h3>
-                                      <div class="meta">January 9, 2018 at 2:21pm</div>
-                                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                                    </div>
-                                  </li>
-                                </ul>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-
-                    <li class="comment">
-                      <div class="vcard bio">
-                        <img src="{% static 'site_static/img/person_1.jpg' %}" alt="Image placeholder">
-                      </div>
-                      <div class="comment-body">
-                        <h3>Jean Doe</h3>
-                        <div class="meta">January 9, 2018 at 2:21pm</div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                      </div>
-                    </li>
+                      {% endfor %}
                   </ul>
                   <!-- END comment-list -->
-                  
+
                   <div class="comment-form-wrap pt-5">
                     <h3 class="mb-5">Laisser un commentaire</h3>
-                    <form action="#" class="p-5 bg-light">
-                      <div class="form-group">
-                        <label for="name">Nom *</label>
-                        <input type="text" class="form-control" id="name">
-                      </div>
-                      <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" class="form-control" id="email">
-                      </div>
-                      <div class="form-group">
-                        <label for="website">Website</label>
-                        <input type="url" class="form-control" id="website">
-                      </div>
 
-                      <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
-                      </div>
-                      <div class="form-group">
-                        <input type="submit" value="Poster le commentaire" class="btn btn-primary">
-                      </div>
-
+                    <form method="POST" class="p-5 bg-light">
+                        {% csrf_token %}
+                        {% bootstrap_form comment_form %}
+                        {% buttons %}
+                            <button type="submit" class="btn btn-primary">Laisser un commentaire</button>
+                        {% endbuttons %}
                     </form>
+
                   </div>
                 </div>
 
@@ -186,12 +113,12 @@
 
             </div>
 
-            
+
           </div>
         </div> <!-- .section -->
-      
+
 
 
       </div> <!-- .main-wrap -->
-      
+
 {% endblock body %}

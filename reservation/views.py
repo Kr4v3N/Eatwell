@@ -15,7 +15,7 @@ def reserve_table(request):
 
         if reserve_form.is_valid():
             reserve_form.save()
-            # TODO : Afficher un message confirmant la soumission du la réservation
+            # TODO : Afficher un message confirmant la soumission de la réservation
 
     context = {'form': reserve_form}
 

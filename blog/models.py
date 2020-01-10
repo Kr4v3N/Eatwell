@@ -41,5 +41,9 @@ class Comment(models.Model):
     content = models.TextField()
     created = models.DateTimeField(default=timezone.now)
 
+    class Meta:
+        verbose_name = 'commentaire'
+        verbose_name_plural = 'commentaires'
+
     def __str__(self):
         return str(self.content)
