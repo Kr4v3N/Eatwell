@@ -36,11 +36,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'taggit',
+    'bootstrap4',
+
     'meals',
     'reservation',
     'blog',
-    'taggit',
-    'bootstrap4',
+    'aboutus',
 ]
 
 MIDDLEWARE = [

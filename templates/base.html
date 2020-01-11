@@ -36,9 +36,9 @@
         <div class="site-menu-inner">
           <ul class="list-unstyled">
             <li class="active"><a href="index.html">Accueil</a></li>
-            <li><a href="about.html">À propos</a></li>
+            <li><a href="{% url 'aboutus:aboutus_list' %}">À propos</a></li>
             <li><a href="{% url 'meals:meal-list' %}">Nos plats</a></li>
-            <li><a href="{% url 'blog:post-list' %}">Notre Blog</a></li>
+            <li><a href="{% url 'blog:post-list' %}">Notre Blogue</a></li>
             <li><a href="{% url 'reservation:reserve-table' %}">Réserver une table</a></li>
             <li><a href="contact.html">Nous contacter</a></li>
           </ul>
@@ -55,7 +55,7 @@
             </ul>
           </div>
           <div class="col-2 col-md-6 text-center">
-            <a href="index.html" class="site-logo">D</a>
+            <a href="index.html" class="site-logo">EWR</a>
           </div>
           <div class="col-5 col-md-3 text-right menu-burger-wrap">
             <a href="#" class="site-nav-toggle js-site-nav-toggle"><i></i></a>
