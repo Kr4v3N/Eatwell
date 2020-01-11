@@ -36,11 +36,11 @@
         <div class="site-menu-inner">
           <ul class="list-unstyled">
             <li class="active"><a href="index.html">Accueil</a></li>
-            <li><a href="{% url 'aboutus:aboutus_list' %}">À propos</a></li>
+            <li><a href="{% url 'aboutus:aboutus-list' %}">À propos</a></li>
             <li><a href="{% url 'meals:meal-list' %}">Nos plats</a></li>
             <li><a href="{% url 'blog:post-list' %}">Notre Blogue</a></li>
             <li><a href="{% url 'reservation:reserve-table' %}">Réserver une table</a></li>
-            <li><a href="contact.html">Nous contacter</a></li>
+            <li><a href="{% url 'contact:send_email' %}">Nous contacter</a></li>
           </ul>
         </div>
       </nav>
