@@ -12,9 +12,9 @@
                   <h2 class="heading mb-4">{{ post_detail }}</h2>
 
                   <div class="post-info">
-                    <div class="date-info">{{ post_detai.created}}</div>
-                    <div class="category-info"><span class="seperator">|</span>In <a href="#" data-title="View all posts in Lifestyle" title="View all posts in Lifestyle">{{ post_detail.category}}</a></div>
-                    <div class="author-info"><span class="seperator">|</span>By <a href="#">{{ post_detail.author}}</a></div>
+                    <div class="date-info">{{ post_detail.created}}</div>
+                    <div class="category-info"><span class="seperator">|</span>Dans <a href="#" data-title="View all posts in Lifestyle" title="View all posts in Lifestyle">{{ post_detail.category}}</a></div>
+                    <div class="author-info"><span class="seperator">|</span>Par <a href="#">{{ post_detail.author}}</a></div>
                   </div>
 
                 </div>
@@ -70,14 +70,14 @@
 
                   </div>
                 </div>
-
+           {# TODO Envoi de mail vers un compte gmail non fonctionnelle #}
               </div> <!-- .col-md-8 -->
               <div class="col-md-4 sidebar">
                 <div class="sidebar-box">
-                  <form action="#" class="search-form">
+                  <form action="{% url 'blog:post-list' %}" method="GET" class="search-form">
                     <div class="form-group">
                       <span class="icon fa fa-search"></span>
-                      <input type="text" class="form-control" placeholder="Tapez un mot-clé">
+                      <input type="text" class="form-control" name="q" value="{{ request.Get.q }}" placeholder="Tapez un mot-clé">
                     </div>
                   </form>
                 </div>

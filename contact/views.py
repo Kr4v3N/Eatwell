@@ -15,10 +15,10 @@ def send_email(request):
             message = form.cleaned_data['message']
 
             try:
-                send_mail(subject, message, from_email, ['admin@example.com'])
-
+                send_mail(subject, message, from_email, ['goldama@gmail.com'])
+        # TODO Envoi de mail vers un compte gmail non fonctionnelle
             except BadHeaderError:
-                return HttpResponse('isvalid header')
+                return HttpResponse('ivalid header')
 
             return redirect('contact:send_success')
 
