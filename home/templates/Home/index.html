@@ -94,7 +94,7 @@
                       <div class="image" style="background-image: url({{ meal.image.url }});" data-aos="fade"></div>
                       <div class="text">
                         <h3>{{ meal.name }}</h3>
-                        <p>{{ meal.description }}</p>
+                        <p>{{ meal.description|truncatewords:20 }}</p>
                         <p class="price">{{ meal.price }}€</p>
                       </div>
                   </div> <!-- .item -->
@@ -124,7 +124,8 @@
                 <div class="tab-content" id="pills-tabContent">
 
                   {% for category in categories %}
-
+         {# TODO Au chargement de la page faire apparaitre automatiquement l'onglet petit-déjeuner #}
+{#                    <div class="tab-pane fade show ative" id="{{ category }}" role="tabpanel" aria-labelledby="{{ category }}-tab">#}
                     <div class="tab-pane fade show" id="{{ category }}" role="tabpanel" aria-labelledby="{{ category }}-tab">
 
                       {% for meal in meal_list %}
@@ -132,7 +133,7 @@
                             <div class="d-block d-md-flex menu-food-item">
                               <div class="text order-1 mb-3">
                                 <h3><a href="{% url 'meals:meal_detail' meal.slug %}">{{ meal.name }}</a></h3>
-                                <p>{{ meal.description }}</p>
+                                <p>{{ meal.description|truncatewords:25 }}</p>
                               </div>
                               <div class="price order-2">
                                 <strong>{{ meal.price }} €</strong>

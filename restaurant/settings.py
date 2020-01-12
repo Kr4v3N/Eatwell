@@ -38,6 +38,7 @@ INSTALLED_APPS = [
 
     'taggit',
     'bootstrap4',
+    'django_summernote',
 
     'meals',
     'reservation',
