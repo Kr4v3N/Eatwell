@@ -35,7 +35,7 @@
       <nav class="site-menu">
         <div class="site-menu-inner">
           <ul class="list-unstyled">
-            <li class="active"><a href="index.html">Accueil</a></li>
+            <li class="active"><a href="{% url 'home:home' %}">Accueil</a></li>
             <li><a href="{% url 'aboutus:aboutus-list' %}">À propos</a></li>
             <li><a href="{% url 'meals:meal-list' %}">Nos plats</a></li>
             <li><a href="{% url 'blog:post-list' %}">Notre Blogue</a></li>
