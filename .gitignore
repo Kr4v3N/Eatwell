@@ -133,8 +133,6 @@ dmypy.json
 uwsgi.ini
 log/**
 !log/placeholder
-media/**
-!media/**/init.txt
 **/migrations/**
 !**/migrations
 !**/migrations/__init__.py
