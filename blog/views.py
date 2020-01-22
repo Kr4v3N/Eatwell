@@ -21,7 +21,7 @@ def post_list(request):
             Q(tags__name__icontains=search_query)
         ).distinct()
     # TODO Redirection ou message d'erreur si mot clé non trouvé
-    paginator = Paginator(post_list, 6)  # Show 6 posts per page
+    paginator = Paginator(post_list, 3)  # Show 6 posts per page
 
     page = request.GET.get('page')
     post_list = paginator.get_page(page)
