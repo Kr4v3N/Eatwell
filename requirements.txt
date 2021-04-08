@@ -1,5 +1,5 @@
 beautifulsoup4==4.8.2
-Django==3.0.12
+Django==3.0.14
 django-bootstrap4==1.1.1
 django-summernote==0.8.11.6
 django-taggit==1.2.0
