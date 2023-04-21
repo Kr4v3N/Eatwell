@@ -9,5 +9,5 @@ PyMySQL==0.9.3
 python-slugify==4.0.0
 pytz==2019.3
 soupsieve==1.9.5
-sqlparse==0.3.0
+sqlparse==0.4.4
 text-unidecode==1.3
